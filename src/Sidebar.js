@@ -17,9 +17,14 @@ import SidebarOption from './SidebarOption';
 
 import db from './firebase';
 
+
+import { useStateValue } from './StateProvider';
+
 function Sidebar() {
 
     const [channels, setChannels] = useState([]);
+
+    const [{ user }] = useStateValue();
 
     useEffect(() => {
         db.collection('channels').onSnapshot(snapshot => {
@@ -44,8 +49,8 @@ function Sidebar() {
                     <h2>Clever Programmer</h2>
                     <h3>
                         <FiberManualRecordIcon />
-                    Satya Vamsi
-                </h3>
+                        {user?.displayName}
+                    </h3>
                 </div>
                 <CreateIcon />
             </div>
