@@ -6,6 +6,8 @@ import { auth, provider } from '../helpers/firebase';
 import { useStateValue } from '../helpers/StateProvider';
 import { actionTypes } from '../helpers/reducer';
 
+import MessageIcon from '@material-ui/icons/Message';
+
 function Login() {
     const [state, dispatch] = useStateValue();
     const signIn = (e) => {
@@ -25,7 +27,7 @@ function Login() {
     return (
         <div className="login">
             <div className="login__container">
-                <img src="https://image.flaticon.com/icons/png/512/2111/2111615.png" alt="Slack Image" />
+                <MessageIcon />
                 <h1>Sign in</h1>
                 <p>satyavamsi.chat.com</p>
                 <Button onClick={signIn}>Sign in with Google</Button>
