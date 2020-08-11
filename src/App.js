@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Chat from './Chat';
-import Login from './Login';
+import Header from './components/js/Header';
+import Sidebar from './components/js/Sidebar';
+import Chat from './components/js/Chat';
+import Login from './components/js/Login';
 
 import './App.css';
 
-import { useStateValue } from './StateProvider';
+import { useStateValue } from './components/helpers/StateProvider';
 
 function App() {
 
@@ -29,7 +29,7 @@ function App() {
                     <Chat />
                   </Route>
                   <Route path="/">
-                    <h1>WELCOME</h1>
+                    <h3>Select a channel from the sidebar</h3>
                   </Route>
                 </Switch>
               </div>

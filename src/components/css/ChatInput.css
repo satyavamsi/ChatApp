@@ -1,5 +1,6 @@
 .chatInput {
-  border-radius: 20px;
+  flex: none;
+  padding: 1px;
 }
 
 .chatInput > form {
@@ -9,11 +10,10 @@
 }
 
 .chatInput > form > input {
-  position: fixed;
-  bottom: 30px;
-  width: 60%;
+  width: 100%;
   border: 1px solid gray;
-  padding: 20px;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .chatInput > form > button {

@@ -3,15 +3,15 @@ import { useParams } from 'react-router-dom';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined'
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 
-import db from './firebase';
+import db from '../helpers/firebase';
 
-import './Chat.css'
+import '../css/Chat.css'
 
 import Message from './Message'
 import ChatInput from './ChatInput'
 
 function Chat() {
-
+    let messagesEnd = null;
     const { channelId } = useParams();
 
     const [channelDetails, setChannelDetails] = useState(null);
@@ -31,6 +31,14 @@ function Chat() {
                 )
             );
     }, [channelId])
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [channelMessages])
+
+    const scrollToBottom = () => {
+        messagesEnd.scrollIntoView({ behavior: "smooth" });
+    }
 
 
     return (
@@ -54,8 +62,14 @@ function Chat() {
                         user={message.user}
                         userImage={message.userImage} />
                 ))}
-
+                <div style={{ float: "left", clear: "both" }}
+                    ref={(el) => {
+                        console.log("reference", el);
+                        messagesEnd = el;
+                    }}>
+                </div>
             </div>
+
             <ChatInput channelName={channelDetails?.name} channelId={channelId} />
         </div>
     )

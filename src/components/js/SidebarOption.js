@@ -1,8 +1,8 @@
 import React from 'react'
-import './SidebarOption.css'
+import '../css/SidebarOption.css'
 import { useHistory } from 'react-router-dom'
 
-import db from './firebase';
+import db from '../helpers/firebase';
 
 function SidebarOption({ Icon, title, id, addChannelOption }) {
 

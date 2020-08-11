@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './Message.css'
+import '../css/Message.css'
 
 function Message({ message, timestamp, user, userImage }) {
     return (
