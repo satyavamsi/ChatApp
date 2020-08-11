@@ -8,6 +8,7 @@ import db from './firebase';
 import './Chat.css'
 
 import Message from './Message'
+import ChatInput from './ChatInput'
 
 function Chat() {
 
@@ -55,6 +56,7 @@ function Chat() {
                 ))}
 
             </div>
+            <ChatInput channelName={channelDetails?.name} channelId={channelId} />
         </div>
     )
 }
